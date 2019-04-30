@@ -159,13 +159,13 @@ static int pi_print_opt(struct qdisc_util *qu, FILE *f, struct rtattr *opt)
 		fprintf(f, "w %s ", sprint_time(w, b1));
 	}
 	if (tb[TCA_PI_A] &&
-	    RTA_PAYLOAD(tb[TCA_PI_A]) >= sizeof(__u32)) {
-		a = rta_getattr_u32(tb[TCA_PI_A]);
+	    RTA_PAYLOAD(tb[TCA_PI_A]) >= sizeof(__u64)) {
+		a = rta_getattr_u64(tb[TCA_PI_A]);
 		fprintf(f, "a %u ", a);
 	}
 	if (tb[TCA_PI_B] &&
-	    RTA_PAYLOAD(tb[TCA_PI_B]) >= sizeof(__u32)) {
-		b = rta_getattr_u32(tb[TCA_PI_B]);
+	    RTA_PAYLOAD(tb[TCA_PI_B]) >= sizeof(__u64)) {
+		b = rta_getattr_u64(tb[TCA_PI_B]);
 		fprintf(f, "b %u ", b);
 	}
 
